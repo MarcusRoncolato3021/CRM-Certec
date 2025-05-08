@@ -3,6 +3,6 @@ builder = "nixpacks"
 buildCommand = "composer install --no-dev"
 
 [deploy]
-startCommand = "php artisan migrate --force && vendor/bin/heroku-php-apache2 public/"
+startCommand = "chmod -R 777 storage bootstrap/cache && php artisan migrate --force && php -S 0.0.0.0:8080 -t public"
 healthcheckPath = "/"
 healthcheckTimeout = 100 
