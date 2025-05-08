@@ -5,6 +5,4 @@ buildCommand = "composer install --no-dev"
 [deploy]
 startCommand = "php artisan migrate --force && vendor/bin/heroku-php-apache2 public/"
 healthcheckPath = "/"
-healthcheckTimeout = 100
-restartPolicyType = "on-failure"
-restartPolicyMaxRetries = 10 
+healthcheckTimeout = 100 
